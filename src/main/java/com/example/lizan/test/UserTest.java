@@ -18,6 +18,6 @@ public class UserTest {
     private String name;
     @EsField(type = FieldType.Keyword,doc_values = false)
     private String sex;
-    @EsField(type = FieldType.Keyword,doc_values = false)
+    @EsField(type = FieldType.Integer,doc_values = false)
     private Integer age;
 }
