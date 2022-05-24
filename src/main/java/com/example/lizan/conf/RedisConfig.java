@@ -11,8 +11,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 @Configuration
 public class RedisConfig {
 
-   /* @Bean
-    public StringRedisTemplate stringRedisTemplate(){
-        return new StringRedisTemplate();
-    }*/
+    @Bean
+    public RedisLock redisLock(StringRedisTemplate stringRedisTemplate){
+        return new RedisLock(stringRedisTemplate);
+    }
 }
