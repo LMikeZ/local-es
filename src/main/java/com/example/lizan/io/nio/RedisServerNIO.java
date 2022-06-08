@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
+
 /**
  * @author lizan
  * @version $Id: RedisServerNIO.java, v 0.1 2022年05月25日 16:29 lizan Exp $$
@@ -14,21 +15,17 @@ public class RedisServerNIO {
     static ArrayList<SocketChannel> socketList = new ArrayList<>();
     static ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         System.out.println("---------RedisServerNIO 启动等待中......");
         ServerSocketChannel serverSocket = ServerSocketChannel.open();
-        serverSocket.bind(new InetSocketAddress("127.0.0.1",6379));
+        serverSocket.bind(new InetSocketAddress("127.0.0.1", 6379));
         serverSocket.configureBlocking(false);//设置为非阻塞模式
 
-        while (true)
-        {
-            for (SocketChannel element : socketList)
-            {
+        while (true) {
+            for (SocketChannel element : socketList) {
                 int read = element.read(byteBuffer);
-                if(read > 0)
-                {
-                    System.out.println("-----读取数据: "+read);
+                if (read > 0) {
+                    System.out.println("-----读取数据: " + read);
                     byteBuffer.flip();
                     byte[] bytes = new byte[read];
                     byteBuffer.get(bytes);
@@ -38,12 +35,11 @@ public class RedisServerNIO {
             }
 
             SocketChannel socketChannel = serverSocket.accept();
-            if(socketChannel != null)
-            {
+            if (socketChannel != null) {
                 System.out.println("-----成功连接: ");
                 socketChannel.configureBlocking(false);//设置为非阻塞模式
                 socketList.add(socketChannel);
-                System.out.println("-----socketList size: "+socketList.size());
+                System.out.println("---  --socketList size: " + socketList.size());
             }
         }
     }
