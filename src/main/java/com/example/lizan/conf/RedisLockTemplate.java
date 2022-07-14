@@ -11,10 +11,12 @@ import com.example.lizan.error.ErrorInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
+@Component
 public class RedisLockTemplate {
     private static Logger log = LoggerFactory.getLogger(RedisLockTemplate.class);
     private static final ErrorInfo waitErrorInfo = new ErrorInfo(800L, "系统繁忙，请稍后再试", "系统繁忙，请稍后再试");
@@ -106,6 +108,9 @@ public class RedisLockTemplate {
     }
 
     public RedisLockTemplate ifError(Supplier waitSuccess, int retryTime, int interval, Supplier<BizException> waitError) {
+        if (this.lock) {
+            return this;
+        }
         for (int i = 0; i < retryTime; ++i) {
             try {
                 Thread.sleep((long) interval);

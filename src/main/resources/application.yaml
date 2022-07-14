@@ -1,0 +1,27 @@
+server:
+  context-path: /local-es
+  port: 8007
+
+spring:
+  application:
+    name: local-es
+  datasource:
+    username: root
+    password: shinemo123
+    url: jdbc:mysql://10.0.17.204:3306/shinemo_im?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    database: 0
+    password: F6D098YDDE3DCNNIEII2MCB7M7OGR2G6K
+    pool:
+      max-active: 50
+      max-idle: 20
+    sentinel:
+      master: mymaster
+      nodes: 10.0.10.53:26379,10.0.10.53:26380
+
+elasticsearch:
+  host: 10.0.10.158:9200
+mybatis-plus:
+  config-location: classpath:mybatis-config.xml

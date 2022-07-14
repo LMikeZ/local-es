@@ -11,5 +11,21 @@
         <result column="id_deleted" property="idDeleted" />
         <result column="gmt_create" property="gmtCreate" />
     </resultMap>
+    <insert id="save" keyProperty="id" useGeneratedKeys="true">
+        insert INTO t_test_user
+            (name ,
+             sex,
+             password,
+             gmt_create)
+            values
+            (#{user.name},
+             #{user.sex},
+             #{user.password},
+             #{user.gmtCreate})
+    </insert>
+    <select id="queryById" resultType="com.example.lizan.repository.model.TestUser">
+        select * from t_test_user where id = #{id}
+    </select>
+
 
 </mapper>
