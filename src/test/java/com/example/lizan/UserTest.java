@@ -32,6 +32,8 @@ public class UserTest {
         user.setGmtCreate(LocalDateTime.now());
         List<TestUser> testUsers = testUserMapper.selectList(null);
         System.out.println(testUsers);
+        ThreadLocal local = new ThreadLocal();
+        local.set(testUsers);
 
     }
     @Test

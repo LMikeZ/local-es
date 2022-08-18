@@ -16,8 +16,8 @@ public class MapDemo {
         Hashtable<Object, Object> hashtable = new Hashtable<>();
         HashMap<Object, Object> hashMap = new HashMap<>(3);
         ConcurrentHashMap<Object, Object> objectConcurrentHashMap = new ConcurrentHashMap<>();
-//        objectConcurrentHashMap.put()
-//        hashMap.put()
+        objectConcurrentHashMap.put(1,1);
+        hashMap.put(1,1);
         ConcurrentHashMap<Object, Object> concurrentHashMap = new ConcurrentHashMap<>();
 //        concurrentHashMap.put()
         System.out.println(1 << 30);

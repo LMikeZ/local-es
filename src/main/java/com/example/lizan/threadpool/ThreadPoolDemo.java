@@ -30,6 +30,7 @@ public class ThreadPoolDemo {
             Runnable worker = new MyRunnable("" + i);
             //执行Runnable
             executor.execute(worker);
+            executor.submit(worker);
         }
         //终止线程池
         executor.shutdown();
