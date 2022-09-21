@@ -28,8 +28,7 @@ spring:
       acks: 1
     consumer:
       group-id: uti-flow-message #群组ID
-      enable-auto-commit: false #true 自动提交处理到哪个offset，false 手动提交
-      # auto-commit-interval: 1000 #多久提交一次offset
+      enable-auto-commit: false #true 自动提交处理到哪个offset，false 手动提交      # auto-commit-interval: 1000 #多久提交一次offset
       auto-offset-reset: latest
       #earliest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费
       #latest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lizan..mapper.TrainingInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.lizan..entity.TrainingInfo">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="depart_id" property="departId" />
+        <result column="training_project_name" property="trainingProjectName" />
+        <result column="sponsor_unit" property="sponsorUnit" />
+        <result column="training_unit" property="trainingUnit" />
+        <result column="training_fee_status" property="trainingFeeStatus" />
+        <result column="training_fee" property="trainingFee" />
+        <result column="charge_situation" property="chargeSituation" />
+        <result column="training_content_id" property="trainingContentId" />
+        <result column="training_form_id" property="trainingFormId" />
+        <result column="training_channel_id" property="trainingChannelId" />
+        <result column="is_support_training" property="isSupportTraining" />
+        <result column="training_start_time" property="trainingStartTime" />
+        <result column="training_end_time" property="trainingEndTime" />
+        <result column="training_duration" property="trainingDuration" />
+        <result column="training_earned_hours" property="trainingEarnedHours" />
+        <result column="training_notice_pic" property="trainingNoticePic" />
+        <result column="graduate_certificate_pic" property="graduateCertificatePic" />
+        <result column="create_at" property="createAt" />
+        <result column="update_at" property="updateAt" />
+        <result column="uname" property="uname" />
+        <result column="is_delete" property="isDelete" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, depart_id, training_project_name, sponsor_unit, training_unit, training_fee_status, training_fee, charge_situation, training_content_id, training_form_id, training_channel_id, is_support_training, training_start_time, training_end_time, training_duration, training_earned_hours, training_notice_pic, graduate_certificate_pic, create_at, update_at, uname, is_delete
+    </sql>
+
+    <sql id="table">
+        `training_info`
+    </sql>
+
+</mapper>
