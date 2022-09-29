@@ -1,8 +1,6 @@
 package com.example.lizan;
 
 import com.alibaba.fastjson.JSON;
-import com.example.lizan.test.UserTest;
-import com.shinemo.chinamobile.common.elasticsearch.core.ElasticsearchHelper;
 import org.elasticsearch.action.DocWriteResponse;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -18,44 +16,29 @@ import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.client.indices.CreateIndexRequest;
-import org.elasticsearch.client.indices.CreateIndexResponse;
-import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilder;
-import org.elasticsearch.search.aggregations.metrics.MaxAggregationBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
-import org.elasticsearch.search.sort.SortOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.util.ReflectionUtils;
-
+import com.example.lizan.test.UserTest;
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.lang.reflect.Field;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = LocalEsApplication.class)
 public class LocalEsApplicationTests {
     @Resource
-    ElasticsearchHelper elasticsearchHelper;
-    @Resource
     RestHighLevelClient restHighLevelClient;
+
 
     @Test
     public void helloEs() throws IOException {
-        /* CreateIndexRequest createIndexRequest = new CreateIndexRequest("user");
-        CreateIndexResponse createIndexResponse = restHighLevelClient.indices().create(createIndexRequest, RequestOptions.DEFAULT);
-        System.out.println(createIndexResponse.isAcknowledged());
-        restHighLevelClient.close();*/
-        boolean b = elasticsearchHelper.createIndex(UserTest.class);
-        System.out.println(b);
+
     }
 
     @Test

@@ -1,12 +1,6 @@
 package com.example.lizan.test;
 
-import com.shinemo.chinamobile.common.elasticsearch.core.ElasticsearchHelper;
-import org.elasticsearch.client.RestHighLevelClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
-import java.io.IOException;
 
 /**
  * @author lizan

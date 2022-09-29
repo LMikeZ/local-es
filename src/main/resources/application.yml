@@ -7,8 +7,8 @@ spring:
     name: local-es
   datasource:
     username: root
-    password: shinemo123
-    url: jdbc:mysql://10.0.17.204:3306/shinemo_im?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
+    password: 123456
+    url: jdbc:mysql://192.168.0.16:3306/enroll_manager?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:

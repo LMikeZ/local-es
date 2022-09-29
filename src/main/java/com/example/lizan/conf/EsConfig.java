@@ -1,6 +1,5 @@
 package com.example.lizan.conf;
 
-import com.shinemo.chinamobile.common.elasticsearch.core.ElasticsearchHelper;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
@@ -31,11 +30,7 @@ public class EsConfig {
 		return new RestHighLevelClient(restClientBuilder);
 	}
 
-	@Bean
-	@DependsOn("restHighLevelClient")
-	public ElasticsearchHelper elasticsearchHelper() {
-		return new ElasticsearchHelper();
-	}
+
 
 	private HttpHost[] parseHttpHost() {
 		String[] hosts = address.split(";");

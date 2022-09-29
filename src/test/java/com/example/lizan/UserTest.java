@@ -1,8 +1,9 @@
 package com.example.lizan;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.alibaba.fastjson.JSON;
 import com.example.lizan.repository.mapper.TestUserMapper;
 import com.example.lizan.repository.model.TestUser;
+import com.example.lizan.util.ChangeBefAftUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,7 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author lizan
@@ -37,10 +40,21 @@ public class UserTest {
 
     }
     @Test
-    public void testQuery(){
-        LambdaQueryWrapper<TestUser> queryWrapper = new LambdaQueryWrapper<>();
-
-        testUserMapper.queryById(1L);
+    public void testQuery() throws Exception {
+        List<TestUser> list = new ArrayList<>();
+        TestUser user = new TestUser();
+        user.setName("刘书豪");
+        user.setSex("男");
+        user.setPassword("1234567");
+        list.add(user);
+        List<TestUser> list2 = new ArrayList<>();
+        TestUser user2 = new TestUser();
+        user2.setName("刘书豪");
+        user2.setSex("女");
+        user2.setPassword("12345");
+        list2.add(user2);
+        Map<String, Object> stringObjectMap = ChangeBefAftUtil.changeBefAft(list, list2);
+        System.out.println(JSON.toJSONString(stringObjectMap));
 
     }
 
