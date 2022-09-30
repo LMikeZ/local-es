@@ -39,6 +39,6 @@ spring:
       ack-mode: MANUAL_IMMEDIATE
 
 elasticsearch:
-  host: 10.0.10.158:9200
+  host: 192.168.32.128:9200
 mybatis-plus:
   config-location: classpath:mybatis-config.xml
