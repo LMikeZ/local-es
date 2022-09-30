@@ -7,19 +7,18 @@ spring:
     name: local-es
   datasource:
     username: root
-    password: 123456
-    url: jdbc:mysql://192.168.0.16:3306/enroll_manager?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
+    password: root
+    url: jdbc:mysql://192.168.32.128:3306/test?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 0
-    password: F6D098YDDE3DCNNIEII2MCB7M7OGR2G6K
+    password: root
     pool:
       max-active: 50
       max-idle: 20
-    sentinel:
-      master: mymaster
-      nodes: 10.0.10.53:26379,10.0.10.53:26380
+    host: 192.168.32.128
+
   kafka:
     bootstrap-servers: 10.0.10.158:19092,10.0.10.158:29092,10.0.10.158:39092
     producer:

@@ -4,11 +4,8 @@ import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.redisson.Redisson;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;
-import org.redisson.client.codec.StringCodec;
-import org.redisson.config.Config;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -131,6 +128,7 @@ public class RedisTests {
 
     }
 
+/*
 
     static
     {
@@ -153,6 +151,7 @@ public class RedisTests {
         //3 测试 ，都没有
 
     }
+*/
 
 
     @Test
