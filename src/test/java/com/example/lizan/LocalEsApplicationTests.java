@@ -62,8 +62,8 @@ public class LocalEsApplicationTests {
     public void helloUpdateEs() throws IOException {
 
         UpdateRequest request = new UpdateRequest();
-        request.index("user").id("1001");
-        request.doc(XContentType.JSON, "sex", "女");
+        request.index("user").id("1004");
+//        request.doc(XContentType.JSON, "sex", "女");
         UpdateResponse response = restHighLevelClient.update(request, RequestOptions.DEFAULT);
         DocWriteResponse.Result result = response.getResult();
 
@@ -73,7 +73,7 @@ public class LocalEsApplicationTests {
     @Test
     public void helloGetEs() throws IOException {
         GetRequest request = new GetRequest();
-        request.index("user").id("1001");
+        request.index("user").id("1004");
         GetResponse response = restHighLevelClient.get(request, RequestOptions.DEFAULT);
         System.out.println(response.getSourceAsString());
     }
