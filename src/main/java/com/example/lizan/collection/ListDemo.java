@@ -1,6 +1,7 @@
 package com.example.lizan.collection;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author lizan
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public class ListDemo {
     public static void main(String[] args) {
 
-        ArrayList<Object> arrayList = new ArrayList<>();
+        List<Object> arrayList = new ArrayList<>();
         arrayList.add(1);
     }
 }
