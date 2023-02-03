@@ -21,6 +21,7 @@ public class CountDownLatchExample1 {
             threadPool.execute(() -> {// Lambda 表达式的运用
                 try {
                     test(threadnum);
+                    countDownLatch.await();
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

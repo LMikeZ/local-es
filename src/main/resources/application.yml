@@ -1,6 +1,6 @@
 server:
   context-path: /local-es
-  port: 8007
+  port: 18007
 
 spring:
   application:
@@ -42,3 +42,16 @@ elasticsearch:
   host: 192.168.32.128:9200
 mybatis-plus:
   config-location: classpath:mybatis-config.xml
+
+xxl:
+  job:
+    accessToken: default_token
+    admin:
+      addresses: http://192.168.2.35:8811/xxl-job-admin/
+    executor:
+      appname: xxl-job-executor-athena
+      ip: ''
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: -1
+      port: 19999
+      address: ''

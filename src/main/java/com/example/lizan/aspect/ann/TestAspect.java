@@ -39,6 +39,7 @@ public class TestAspect {
         System.out.println("此次请求的路径：" + request.getRequestURL());
         System.out.println("此次业务操作的权限ID：" + JSON.toJSONString(authCheck));
         //3、获取注解权限属性
+        Object target = joinPoint.getTarget();
         Class<?> aClass = joinPoint.getTarget().getClass();
         //获取方法签名（通过此签名获得目标方法信息）
         MethodSignature ms = (MethodSignature)joinPoint.getSignature();
