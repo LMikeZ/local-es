@@ -8,7 +8,7 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://192.168.32.128:3306/test?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://192.168.19.128:3306/test?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=UTF8&allowMultiQueries=true&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
@@ -17,7 +17,7 @@ spring:
     pool:
       max-active: 50
       max-idle: 20
-    host: 192.168.32.128
+    host: 192.168.19.128
 
   kafka:
     bootstrap-servers: 10.0.10.158:19092,10.0.10.158:29092,10.0.10.158:39092
