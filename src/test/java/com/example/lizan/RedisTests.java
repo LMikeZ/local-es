@@ -1,7 +1,9 @@
 package com.example.lizan;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.redisson.api.RBloomFilter;
@@ -12,9 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDate;
+import java.util.*;
 
+@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = LocalEsApplication.class)
 public class RedisTests {
@@ -26,20 +29,49 @@ public class RedisTests {
 
     private static final String hello_set = "hello_set_1";
     private static final String hello_zset = "hello_zset_1";
+
+    public static String VPR_APPID_KEY = "cloud_server:VPR:appId:%s";
+    public static String VPR_DATE_KEY = "date:%s";
+
     @Test
     public void helloRedis() throws IOException {
-        stringRedisTemplate.opsForValue().set("hello_redis_1", "helloRedis");
+        String helloRedis1 = stringRedisTemplate.opsForValue().get("hello_redis_1");
+        System.out.println(helloRedis1);
+        // stringRedisTemplate.opsForValue().set("hello_redis_1", "helloRedis");
 
     }
 
     @Test
     public void helloRedis2() throws IOException {
+        Map<String, String> hashMap = new HashMap<>();
+        hashMap.put("1", "1");
+        hashMap.put("2", "3");
+        hashMap.put("4", "4");
+        stringRedisTemplate.opsForHash().putAll(hello_set, hashMap);
 
       /*  String s = stringRedisTemplate.opsForValue().get("hello_redis_1");
         System.out.println(s);*/
 //        stringRedisTemplate.expire("hello_redis_1",2, TimeUnit.SECONDS);
-        Long expire = stringRedisTemplate.getExpire("hello_redis_1");
-        System.out.println(expire);
+//        Long expire = stringRedisTemplate.getExpire("hello_redis_1");
+//        System.out.println(expire);
+
+    }
+
+    @Test
+    public void helloHash() throws IOException {
+//        for (int i = 0; i < 3; i++) {
+//            stringRedisTemplate.opsForHash().increment(String.format(VPR_APPID_KEY, "12345"),
+//                    String.format(VPR_DATE_KEY, LocalDate.now().plusDays(1)),1);
+//        }
+
+
+        List<Object> values = stringRedisTemplate.opsForHash().values(String.format(VPR_APPID_KEY, "36421646"));
+        log.info("values:{}", JSON.toJSONString(values));
+      /*  String s = stringRedisTemplate.opsForValue().get("hello_redis_1");
+        System.out.println(s);*/
+//        stringRedisTemplate.expire("hello_redis_1",2, TimeUnit.SECONDS);
+//        Long expire = stringRedisTemplate.getExpire("hello_redis_1");
+//        System.out.println(expire);
 
     }
 
@@ -98,6 +130,7 @@ public class RedisTests {
 
     /**
      * 布隆过滤器
+     *
      * @throws IOException
      */
     @Test
@@ -113,10 +146,12 @@ public class RedisTests {
 
 
     }
+
     private static int size = 100 * 10000;
+
     @Test
     public void helloBloomFilter2() throws IOException {
-        BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), size,0.00001);
+        BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), size, 0.00001);
         System.out.println(filter.mightContain(1));
         System.out.println(filter.mightContain(2));
         filter.put(1);
@@ -156,8 +191,6 @@ public class RedisTests {
 
     @Test
     public void helloRedisBloomFilter2() throws IOException {
-
-
 
 
     }

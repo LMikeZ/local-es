@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">-->
 
-    <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"/>
-
-</beans>
+<!--    &lt;!&ndash;    <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"/>&ndash;&gt;-->
+<!--    <bean id="springDemo2" class="com.example.lizan.spring.SpringDemo2" init-method="init"/>-->
+<!--&lt;!&ndash;    <bean id="user" class="com.example.lizan.spring.selftag.User"/>&ndash;&gt;-->
+<!--</beans>-->

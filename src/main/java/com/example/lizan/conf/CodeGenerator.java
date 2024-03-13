@@ -1,19 +1,13 @@
 //package com.example.lizan.conf;
 //
-//import com.baomidou.mybatisplus.annotation.FieldFill;
+//
 //import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
-//import com.baomidou.mybatisplus.core.toolkit.StringPool;
-//import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 //import com.baomidou.mybatisplus.generator.AutoGenerator;
-//import com.baomidou.mybatisplus.generator.InjectionConfig;
-//import com.baomidou.mybatisplus.generator.config.*;
-//import com.baomidou.mybatisplus.generator.config.po.TableFill;
-//import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-//import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-//import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
+//import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+//import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+//import org.apache.commons.lang3.StringUtils;
 //
 //import java.util.ArrayList;
-//import java.util.List;
 //import java.util.Scanner;
 //
 ///**
@@ -46,7 +40,6 @@
 //
 //    public static void main(String[] args) {
 //        // 代码生成器
-//        AutoGenerator mpg = new AutoGenerator();
 //
 //        // 全局配置
 //        GlobalConfig gc = new GlobalConfig();
@@ -56,9 +49,7 @@
 //        gc.setOpen(false);
 //        gc.setBaseResultMap(true);
 //        // gc.setSwagger2(true); 实体属性 Swagger2 注解
-//        mpg.setGlobalConfig(gc);
 //
-//        // 数据源配置
 //        DataSourceConfig dsc = new DataSourceConfig();
 //        dsc.setUrl("jdbc:mysql://10.0.17.204:3306/shinemo_im?useUnicode=true&useSSL=false&characterEncoding=utf8");
 //        // dsc.setSchemaName("public");
@@ -66,6 +57,12 @@
 //        dsc.setUsername("root");
 //        dsc.setPassword("shinemo123");
 //        mpg.setDataSource(dsc);
+//        AutoGenerator mpg = new AutoGenerator(gc);
+//
+////        mpg.setGlobalConfig(gc);
+//
+//        // 数据源配置
+//
 //
 //        // 包配置
 //        PackageConfig pc = new PackageConfig();

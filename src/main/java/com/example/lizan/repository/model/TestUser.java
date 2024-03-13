@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import com.example.lizan.util.change.LogIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 

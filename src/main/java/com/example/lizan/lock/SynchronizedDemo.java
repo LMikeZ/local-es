@@ -10,10 +10,9 @@ public class SynchronizedDemo {
         synchronized (object) {
 
         }
-        method2();
     }
 
-    private static void method2() {
+    public synchronized static void method2() {
 
     }
 }
