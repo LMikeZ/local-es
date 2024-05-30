@@ -57,6 +57,12 @@ elasticsearch:
 mybatis-plus:
   config-location: classpath:mybatis-config.xml
 
+eventbus:
+  default-exchange: LiZan
+  default-msg-type: ""
+  default-send-channel: from-lz-server
+  default-sender: ${spring.application.name}
+
 xxl:
   job:
     accessToken: default_token

@@ -4,11 +4,13 @@ package com.example.lizan.controller;
 import com.alibaba.fastjson.JSON;
 import com.example.lizan.aspect.ann.TestAuthAnn;
 import com.example.lizan.bean.UserTestDTO;
+import com.example.lizan.eventBus.EventBus;
 import com.example.lizan.req.TranslateRequestParams;
 import com.example.lizan.util.PageResult;
 import com.example.lizan.util.Result;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -28,11 +30,14 @@ import java.io.IOException;
 @RequestMapping("/test-user")
 public class TestUserController {
 
+    @Autowired
+    EventBus eventBus;
 
     @GetMapping("/{id}")
-    public Result translate(@RequestBody String id) {
+    public Result translate(@PathVariable String id) {
 //        testV2(requestParams);
         UserTestDTO userTestDTO = new UserTestDTO().setName("dfsaf").setUrl("fdsagsgs").setUid("fdsaf");
+        eventBus.dispatchSubscriber(userTestDTO);
         return Result.success(PageResult.builder().result(Lists.newArrayList(userTestDTO)).build());
     }
 

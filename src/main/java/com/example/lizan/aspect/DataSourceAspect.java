@@ -11,4 +11,8 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class DataSourceAspect {
+    public static void main(String[] args) {
+
+        
+    }
 }

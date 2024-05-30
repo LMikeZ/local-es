@@ -105,7 +105,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.github.burukeyou</groupId>
+            <artifactId>jdframe</artifactId>
+            <version>0.0.4</version>
+        </dependency>
         <!--  布隆过滤器  -->
         <dependency>
             <groupId>com.google.guava</groupId>
