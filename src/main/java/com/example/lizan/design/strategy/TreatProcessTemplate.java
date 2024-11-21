@@ -1,5 +1,6 @@
-package com.example.lizan.handler;
+package com.example.lizan.design.strategy;
 
+import com.example.lizan.enums.TaskTypeEnum;
 import com.example.lizan.req.CompleteTaskReq;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -15,5 +16,10 @@ public class TreatProcessTemplate extends AbstractDefaultProcessTemplate {
     @Override
     protected void operateRecords(CompleteTaskReq req) {
 
+    }
+
+    @Override
+    public String getType() {
+        return TaskTypeEnum.TREAT.getType();
     }
 }

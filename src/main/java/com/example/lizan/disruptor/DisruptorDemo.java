@@ -21,8 +21,11 @@ public class DisruptorDemo {
         );
         disruptor.handleEventsWith(new OrderEventHandler());
         disruptor.start();
-        RingBuffer<OrderEvent> ringBuffer = disruptor.getRingBuffer();
-        OrderEventProducer eventProducer = new OrderEventProducer(ringBuffer);
-        eventProducer.onData(UUID.randomUUID().toString());
+        for (int i = 0; i < 100; i++) {
+            RingBuffer<OrderEvent> ringBuffer = disruptor.getRingBuffer();
+            OrderEventProducer eventProducer = new OrderEventProducer(ringBuffer);
+            eventProducer.onData(i+"_"+UUID.randomUUID().toString());
+        }
+
     }
 }

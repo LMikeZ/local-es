@@ -1,11 +1,15 @@
 package com.example.lizan;
 
 import com.alibaba.fastjson.JSON;
+import com.example.lizan.design.strategy.EventTaskTypeFactory;
+import com.example.lizan.design.strategy.ProcessOperateHandler;
+import com.example.lizan.enums.TaskTypeEnum;
 import com.example.lizan.repository.mapper.TestUserMapper;
 import com.example.lizan.repository.model.TestUser;
 import com.example.lizan.util.ChangeBefAftUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -25,6 +29,11 @@ public class UserTest {
 
     @Resource
     TestUserMapper testUserMapper;
+    //
+    // @Autowired
+    // EventTaskTypeFactory eventTaskTypeFactory;
+
+
 
     @Test
     public void testSave(){

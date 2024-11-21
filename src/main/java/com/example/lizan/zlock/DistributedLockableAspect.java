@@ -32,7 +32,7 @@ public class DistributedLockableAspect implements KeyGenerator {
      *
      * @author zhaocheng
      */
-    @Pointcut(value = "execution(* *(..)) && @annotation(com.abcpen.zlock.annotation.ZLockable)")
+    @Pointcut(value = "execution(* *(..)) && @annotation(com.example.lizan.aspect.ann.ZLockable)")
     public void distributedLockable() {
     }
 

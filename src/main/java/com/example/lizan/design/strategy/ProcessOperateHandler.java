@@ -1,4 +1,4 @@
-package com.example.lizan.handler;
+package com.example.lizan.design.strategy;
 
 
 import com.example.lizan.req.CompleteTaskReq;
@@ -11,4 +11,5 @@ public interface ProcessOperateHandler {
 
 
      void operate(CompleteTaskReq req);
+     String getType();
 }
